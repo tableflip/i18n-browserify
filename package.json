@@ -1,0 +1,26 @@
+{
+  "name": "i18n",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "beefy index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "browserify ./app.js -o ./dist/bundle.js -x '**/*.hbs' -x i18n -x moment",
+    "tpl": "browserify ./app.js -o ./dist/tpl.js -x '!(**/*.hbs)' -x i18n -t [ ./locale/i18ify.js --lang es ] -t hbsfy",
+    "i18n": "browserify -r './locale/es.js:i18n' -o ./dist/i18n.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jed": "^1.1.0",
+    "moment": "^2.10.2"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.7",
+    "hbsfy": "^2.2.1",
+    "through2": "^0.6.3",
+    "trumpet": "^1.7.1",
+    "underscore.string": "^3.0.3"
+  }
+}

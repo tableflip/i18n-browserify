@@ -1,0 +1,17 @@
+{
+  "frontend": {
+    "" : {
+      "domain" : "frontend",
+      "lang" : "es",
+      "plural_forms" : "nplurals=2; plural=(n != 1);"
+    },
+    "Login": ["Iniciar sesión"],
+    "Welcome {{name}}": ["Hola {{name}}"],
+    "someModule/index.hbs/Login": ["OMG"],
+    "made by Pole Star": ["hecha por Pole Star"],
+    "There are %d new alerts": ["hay %s", "hay %s xxx"],
+    "There is 1 new alert": ["Hay 1 nueva alerta", "Hay %s nuevas alertas"],
+    "There is %d new warning": ["Hay 1 nuevo aviso", "Hay %d nuevos avisos"],
+    "There will be 1h of scheduled maintenance on %s": ["Habrá 1h de mantenimiento programado el %s"]
+  }
+}

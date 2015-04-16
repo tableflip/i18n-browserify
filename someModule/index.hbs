@@ -1,0 +1,74 @@
+<h1 data-i18n>Welcome {{name}}</h1>
+<p>
+  {{ships}}
+</p>
+
+<p>
+  {{ngettext "There is 1 new alert" "There are %d new alerts" alerts}}
+</p>
+
+<p>
+  {{ngettext "There is %d new warning" "There are %d new warnings" warnings}}
+</p>
+
+<p class="messages">
+  {{message}}
+</p>
+
+<form class="login__form">
+  <h3 data-i18n>Login</h3>
+  <p class="login__lead" data-i18n>Please enter your email and password to log in</p>
+  {{#if errors}}
+      <div class="alert alert-danger">
+          <ul>
+            {{#each errors}}
+                <li>{{{this}}}</li>
+            {{/each}}
+          </ul>
+      </div>
+  {{/if}}
+  <div class="form-group">
+      <label for="username" data-i18n>Email</label>
+      <input type="text" class="form-control" name="username" autocorrect="off" autocapitalize="off" value="{{{prefill.username}}}">
+  </div>
+  <div class="form-group">
+      <label for="password" data-i18n>Password</label>
+      <input type="password" class="form-control" name="password">
+  </div>
+  <div class="checkbox">
+      <label>
+          <input type="checkbox" name="remember"{{{prefill.rememberCheckedAttr}}}> <span data-i18n>Remember Me</span>
+      </label>
+  </div>
+  <button type="submit" class="login__submit btn btn-block btn-primary" data-i18n>Login</button>
+  <p class="text-center small"><a href="#login/forgot" data-i18n>Forgot your password</a></p>
+</form>
+
+<footer>
+  <h4>{{footer}}</h4>
+</footer>
+
+<style media="screen">
+  body{
+    font-family:futura;
+    text-align:center;
+    padding:50px 0;
+    background:hotpink;
+  }
+  .login__form{
+    display:inline-block;
+    margin:0 auto;
+    border:solid 2px #eee;
+    border-radius:3px;
+    text-align:left;
+    padding: 10px 20px;
+    background:#fff;
+  }
+  .form-group {
+    padding:10px 0;
+  }
+  label{
+    display:inline-block;
+    width: 10em;
+  }
+</style>
