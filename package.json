@@ -18,7 +18,8 @@
   "dependencies": {
     "handlebars": "^3.0.1",
     "jed": "^1.1.0",
-    "moment": "^2.10.2"
+    "moment": "^2.10.2",
+    "pkgify": "git://github.com/olizilla/pkgify.git#subarg-friendly"
   },
   "devDependencies": {
     "browserify": "^9.0.7",
