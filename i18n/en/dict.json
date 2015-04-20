@@ -1,0 +1,20 @@
+{
+  "frontend": {
+    "" : {
+      "domain" : "frontend",
+      "lang" : "en",
+      "plural_forms" : "nplurals=2; plural=(n != 1);"
+    },
+    "Login": ["Login"],
+    "Email": ["Email"],
+    "Password": ["Password"],
+    "Remember Me" :["Remember Me"],
+    "Forgot your password": ["Forgot your password"],
+    "Welcome {{name}}": ["Welcome {{name}}"],
+    "made by robots": ["made by robots"],
+    "There is 1 new alert": ["There is 1 new alert", "There are %d new alerts"],
+    "There is 1 new warning": ["There is 1 new warning", "There are %s new warnings"],
+    "There will be 1h of scheduled maintenance on %s": ["There will be 1h of scheduled maintenance on %s"],
+    "Please enter your email and password to log in": ["Please enter your email and password to log in"]
+  }
+}

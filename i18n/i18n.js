@@ -1,3 +1,6 @@
+/*
+# i18n.js - used at run-time & build-time for getext style string translation
+*/
 var Jed = require('jed')
 
 module.exports = function (dict) {
