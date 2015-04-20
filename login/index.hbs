@@ -11,7 +11,9 @@
           Welcome {{name}}
         </div>
         <ul class="list-group">
-          <li class="list-group-item">{{ships}}</li>
+          <li class="list-group-item">
+            {{ships}}
+          </li>
           <li class="list-group-item">
             {{ngettext "There is 1 new alert" "There are %d new alerts" alerts}}
           </li>
@@ -20,6 +22,7 @@
           </li>
         </ul>
       </div>
+      <div class="flag {{locale}}" title="{{locale}}"></div>
     </div>
 
     <div class="col-sm-6">
@@ -50,43 +53,5 @@
 </div>
 
 <footer class="{{locale}}">
-  Language: <a class="de" href="/de">de</a> | <a class="en" href="/en">en</a> | <a class="es" href="/es">es</a>
+  Language: <a class="de" href="../de">de</a> | <a class="en" href="../en">en</a> | <a class="es" href="../es">es</a>
 </footer>
-
-<style media="screen">
-  body{
-    font-family:futura;
-    padding:20px 0;
-    background:slategray;
-  }
-  .alert {
-    text-align:center;
-  }
-  .login__form{
-    border:solid 2px #eee;
-    border-radius:3px;
-    text-align:left;
-    padding: 10px 20px;
-    background:#fff;
-  }
-  .form-group {
-    padding:10px 0;
-  }
-  label{
-    display:inline-block;
-    width: 10em;
-  }
-  footer {
-    text-align:center;
-    position: fixed;
-    bottom:0;
-    width:100%;
-    background:azure;
-  }
-  .de .de,
-  .en .en,
-  .es .es {
-    color:darkgreen;
-    text-decoration:underline;
-  }
-</style>

@@ -16,6 +16,5 @@ document.body.innerHTML = tpl({
     .translate("There will be 1h of scheduled maintenance on %s")
     .fetch(i18n.moment("2015-12-25").format('LLL')),
 
-  footer: i18n.translate("made by robots").fetch(),
   locale: i18n.locale
 })

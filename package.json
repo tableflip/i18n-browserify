@@ -23,7 +23,6 @@
   "devDependencies": {
     "browserify": "^9.0.7",
     "hbsfy": "^2.2.1",
-    "instant": "^1.8.0",
     "instant-server": "^1.2.0",
     "pkgify": "^1.0.1",
     "through2": "^0.6.3",

@@ -64,17 +64,21 @@ module.exports = HandlebarsCompiler.template({"compiler":[6,">= 2.0.0-beta.1"],"
     + alias3(((helper = (helper = helpers.message || (depth0 != null ? depth0.message : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"message","hash":{},"data":data}) : helper)))
     + "\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-sm-6\">\n      <div class=\"panel panel-primary\">\n        <div class=\"panel-heading\" data-i18n=\"login/index.hbs\">Willkommen "
     + alias3(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"name","hash":{},"data":data}) : helper)))
-    + "</div>\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\">"
+    + "</div>\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\">\n            "
     + alias3(((helper = (helper = helpers.ships || (depth0 != null ? depth0.ships : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"ships","hash":{},"data":data}) : helper)))
-    + "</li>\n          <li class=\"list-group-item\">\n            "
+    + "\n          </li>\n          <li class=\"list-group-item\">\n            "
     + alias3((helpers.ngettext || (depth0 && depth0.ngettext) || alias1).call(depth0,"There is 1 new alert","There are %d new alerts",(depth0 != null ? depth0.alerts : depth0),{"name":"ngettext","hash":{},"data":data}))
     + "\n          </li>\n          <li class=\"list-group-item\">\n            "
     + alias3((helpers.ngettext || (depth0 && depth0.ngettext) || alias1).call(depth0,"There is %d new warning","There are %d new warnings",(depth0 != null ? depth0.warnings : depth0),{"name":"ngettext","hash":{},"data":data}))
-    + "\n          </li>\n        </ul>\n      </div>\n    </div>\n\n    <div class=\"col-sm-6\">\n      <form class=\"login__form form\">\n        <h3 data-i18n=\"login/index.hbs\">Login</h3>\n        <p class=\"login__lead\" data-i18n=\"login/index.hbs\">Bitte geben Sie Ihre E-Mail und Passwort für die Anmeldung in</p>\n        <div class=\"form-group\">\n            <label for=\"username\" data-i18n=\"login/index.hbs\">Email</label>\n            <input type=\"text\" class=\"form-control\" name=\"username\" autocorrect=\"off\" autocapitalize=\"off\" value=\""
+    + "\n          </li>\n        </ul>\n      </div>\n      <div class=\"flag "
+    + alias3(((helper = (helper = helpers.locale || (depth0 != null ? depth0.locale : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"locale","hash":{},"data":data}) : helper)))
+    + "\" title=\""
+    + alias3(((helper = (helper = helpers.locale || (depth0 != null ? depth0.locale : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"locale","hash":{},"data":data}) : helper)))
+    + "\"></div>\n    </div>\n\n    <div class=\"col-sm-6\">\n      <form class=\"login__form form\">\n        <h3 data-i18n=\"login/index.hbs\">Login</h3>\n        <p class=\"login__lead\" data-i18n=\"login/index.hbs\">Bitte geben Sie Ihre E-Mail und Passwort für die Anmeldung in</p>\n        <div class=\"form-group\">\n            <label for=\"username\" data-i18n=\"login/index.hbs\">Email</label>\n            <input type=\"text\" class=\"form-control\" name=\"username\" autocorrect=\"off\" autocapitalize=\"off\" value=\""
     + ((stack1 = this.lambda(((stack1 = (depth0 != null ? depth0.prefill : depth0)) != null ? stack1.username : stack1), depth0)) != null ? stack1 : "")
     + "\">\n        </div>\n        <div class=\"form-group\">\n            <label for=\"password\" data-i18n=\"login/index.hbs\">Passwort</label>\n            <input type=\"password\" class=\"form-control\" name=\"password\">\n        </div>\n        <div class=\"checkbox\">\n            <label>\n                <input type=\"checkbox\" name=\"remember\"> <span data-i18n=\"login/index.hbs\">Mich erinnerne</span>\n            </label>\n        </div>\n        <button type=\"submit\" class=\"login__submit btn btn-block btn-primary\" data-i18n=\"login/index.hbs\">Login</button>\n        <p class=\"text-center small\"><a href=\"#login/forgot\" data-i18n=\"login/index.hbs\">Passwort vergessen</a></p>\n      </form>\n    </div>\n\n  </div>\n</div>\n\n<footer class=\""
     + alias3(((helper = (helper = helpers.locale || (depth0 != null ? depth0.locale : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"locale","hash":{},"data":data}) : helper)))
-    + "\">\n  Language: <a class=\"de\" href=\"/de\">de</a> | <a class=\"en\" href=\"/en\">en</a> | <a class=\"es\" href=\"/es\">es</a>\n</footer>\n\n<style media=\"screen\">\n  body{\n    font-family:futura;\n    padding:20px 0;\n    background:slategray;\n  }\n  .alert {\n    text-align:center;\n  }\n  .login__form{\n    border:solid 2px #eee;\n    border-radius:3px;\n    text-align:left;\n    padding: 10px 20px;\n    background:#fff;\n  }\n  .form-group {\n    padding:10px 0;\n  }\n  label{\n    display:inline-block;\n    width: 10em;\n  }\n  footer {\n    text-align:center;\n    position: fixed;\n    bottom:0;\n    width:100%;\n    background:azure;\n  }\n  .de .de,\n  .en .en,\n  .es .es {\n    color:darkgreen;\n    text-decoration:underline;\n  }\n</style>\n";
+    + "\">\n  Language: <a class=\"de\" href=\"../de\">de</a> | <a class=\"en\" href=\"../en\">en</a> | <a class=\"es\" href=\"../es\">es</a>\n</footer>\n";
 },"useData":true});
 
 },{"hbsfy/runtime":14}],6:[function(require,module,exports){
@@ -96,7 +100,6 @@ document.body.innerHTML = tpl({
     .translate("There will be 1h of scheduled maintenance on %s")
     .fetch(i18n.moment("2015-12-25").format('LLL')),
 
-  footer: i18n.translate("made by robots").fetch(),
   locale: i18n.locale
 })
 
