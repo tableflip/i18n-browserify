@@ -1,0 +1,19 @@
+{
+  "frontend": {
+    "" : {
+      "domain" : "frontend",
+      "lang" : "de",
+      "plural_forms" : "nplurals=2; plural=(n != 1);"
+    },
+    "Login": ["Login"],
+    "Email": ["Email"],
+    "Password": ["Passwort"],
+    "Remember Me" :["Mich erinnerne"],
+    "Forgot your password": ["Passwort vergessen"],
+    "Welcome {{name}}": ["Willkommen {{name}}"],
+    "There is 1 new alert": ["Es gibt ein neues alarm", "Es gibt 3 neue Alarm"],
+    "There is 1 new warning": ["Es gibt ein neues warnung", "Es gibt 3 neue warnungen"],
+    "There will be 1h of scheduled maintenance on %s": ["Es wird am %s 1 Uhr von wartungsarbeiten werden"],
+    "Please enter your email and password to log in": ["Bitte geben Sie Ihre E-Mail und Passwort für die Anmeldung in"]
+  }
+}

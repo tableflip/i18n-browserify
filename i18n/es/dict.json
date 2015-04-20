@@ -5,13 +5,18 @@
       "lang" : "es",
       "plural_forms" : "nplurals=2; plural=(n != 1);"
     },
+    "Email": ["Correo electrónico"],
+    "Password": ["Contraseña"],
+    "Remember Me" :["Recuérdame"],
+    "Forgot your password": ["Olvidaste tu contraseña"],
     "Login": ["Iniciar sesión"],
     "Welcome {{name}}": ["Hola {{name}}"],
     "someModule/index.hbs/Login": ["OMG"],
-    "made by Pole Star": ["hecha por Pole Star"],
+    "made by robots": ["hecha por robots"],
     "There are %d new alerts": ["hay %s", "hay %s xxx"],
     "There is 1 new alert": ["Hay 1 nueva alerta", "Hay %s nuevas alertas"],
     "There is %d new warning": ["Hay 1 nuevo aviso", "Hay %d nuevos avisos"],
-    "There will be 1h of scheduled maintenance on %s": ["Habrá 1h de mantenimiento programado el %s"]
+    "There will be 1h of scheduled maintenance on %s": ["Habrá 1h de mantenimiento programado el %s"],
+    "Please enter your email and password to log in": ["Por favor, introduzca su correo electrónico y contraseña para entrar"]
   }
 }

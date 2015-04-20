@@ -1,23 +1,20 @@
 /*
 # i18ify - used at build time to replace text in templates.
 */
-
 var path = require('path')
 var through = require('through2')
 var trumpet = require('trumpet')
 var trim = require('underscore.string').trim
-var i18n = require('./locale.js')
+var i18n = require('./i18n.js')
 
 var baseDir = process.cwd()
 
 module.exports = function (file, opts) {
   if (!isHandlebars(file)) return through()
+
   console.log('i18nfy', opts.lang)
-  var dict = require('./dict/dict.' + opts.lang + '.json')
-
+  var dict = require(['.', opts.lang, 'dict.json'].join('/'))
   var key = path.relative(baseDir, file)
-  // console.log('i18nfy file', key)
-
   var tr = trumpet()
 
   // Find elements to translate
@@ -26,7 +23,7 @@ module.exports = function (file, opts) {
     // Add the file path id as the value of the `data-i18n attribute
     elem.setAttribute('data-i18n', key)
 
-    // Repalace the contents with the translation
+    // Replace the contents with the translation
     elem.createReadStream()
       .pipe(translator(dict))
       .pipe(elem.createWriteStream())
