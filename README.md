@@ -57,7 +57,7 @@ The translation is done first, and then the templates standard variable substitu
 
 The `data-i18n` magic is done at build time. A custom `118ify` transform is used with browserify to process the templates, translating the text content of the elements before handing over to the handlebars transform, that converts the html into a javascript function. As the translation happens before the templates are compiled, the standard handlebars variable substitution still works, even within phrases that are translated.
 
-As such these translations are done up-front, before deployment, creating languages specific app bundles, via browserify:
+As such these translations are done up-front, before deployment, creating language specific app bundles, via browserify:
 
 ```sh
 "bundle_es": "browserify app.js -o dist/es/bundle.js -t [ ./i18n/i18ify.js --lang es ] -t hbsfy",
@@ -138,7 +138,7 @@ Browserify is doing a lot of work for us, so we capture the command line configu
 
 The bundle commands only differ on an language code string so there is an exercise for the interested reader to optimise these commands.
 
-The output of the commands are locale specific app bundles found in /dist/<locale>/bundle.js which contain all our app code and language specific templates.
+The output of the commands are locale specific app bundles found in `/dist/<locale>/bundle.js` which contain all our app code and language specific templates.
 
 They can be run by an `npm start`
 
