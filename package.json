@@ -1,5 +1,5 @@
 {
-  "name": "i18n",
+  "name": "i18n-browserify",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "watchify app.js -o dist/en/bundle.js -t [ pkgify --packages [ --i18n i18n/en/en.js ] ] -t hbsfy",
     "bundle": "mkdir -p dist/en; browserify app.js -o dist/en/bundle.js -t [ pkgify --packages [ --i18n ./i18n/en/en.js ] ] -t hbsfy",
-    "bundle_es": "mkdir -p dist/es; browserify app.js -o dist/es/bundle.js -t [ pkgify --packages [ --i18n i18n/es/es.js ] ] -t [ ./i18n/i18ify.js --lang es ] -t hbsfy",
-    "bundle_de": "mkdir -p dist/de; browserify app.js -o dist/de/bundle.js -t [ pkgify --packages [ --i18n i18n/de/de.js ] ] -t [ ./i18n/i18ify.js --lang de ] -t hbsfy",
+    "bundle_es": "mkdir -p dist/es; browserify app.js -o dist/es/bundle.js -t [ pkgify --packages [ --i18n i18n/es/es.js ] ] -t [ ./i18n/i18ify.js --path i18n --lang es ] -t hbsfy",
+    "bundle_de": "mkdir -p dist/de; browserify app.js -o dist/de/bundle.js -t [ pkgify --packages [ --i18n i18n/de/de.js ] ] -t [ ./i18n/i18ify.js --path i18n --lang de ] -t hbsfy",
     "bundle_all": "npm run bundle & npm run bundle_de & npm run bundle_es; npm run html",
     "html": "find dist -type d -depth 1 -exec cp index.html {} \\;"
   },

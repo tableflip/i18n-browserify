@@ -1,19 +1,21 @@
 /*
 # i18ify - used at build time to replace text in templates.
 */
+var fs = require('fs')
 var path = require('path')
 var through = require('through2')
 var trumpet = require('trumpet')
 var trim = require('underscore.string').trim
 var i18n = require('./i18n.js')
 
-var baseDir = process.cwd()
-
 module.exports = function (file, opts) {
   if (!isHandlebars(file)) return through()
 
-  console.log('i18nfy', opts.lang)
-  var dict = require(['.', opts.lang, 'dict.json'].join('/'))
+  opts = opts || {}
+
+  var baseDir = process.cwd()
+  var dictPath = path.join(opts.path || baseDir, opts.lang, 'dict.json')
+  var dict = JSON.parse(fs.readFileSync(dictPath))
   var key = path.relative(baseDir, file)
   var tr = trumpet()
 
