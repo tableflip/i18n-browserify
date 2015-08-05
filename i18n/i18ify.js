@@ -27,7 +27,7 @@ module.exports = function (file, opts) {
 
     // Replace the contents with the translation
     elem.createReadStream()
-      .pipe(translator(dict))
+      .pipe(translator(dict, file))
       .pipe(elem.createWriteStream())
   })
 
@@ -40,14 +40,23 @@ function isHandlebars (file) {
 }
 
 // a transform stream to replace text with translated text
-function translator (dict) {
-  var locale = i18n(dict);
-  return through(function (buf, enc, next) {
-    var key = trim(buf.toString('utf8'))
-    var result = locale.translate(key).fetch()
-    // console.log('i18nfy translate', key, result)
-    // if (!result) console.warn('No translation for: ', key)
-    this.push(result || key)
-    next()
-  })
+function translator (dict, file) {
+  var locale = i18n(dict)
+  var key = ''
+
+  return through(
+    function (buf, enc, next) {
+      key += trim(buf.toString('utf8'))
+      next()
+    },
+    function (next) {
+      if (!key) return next(new Error('Empty translation key in file ' + file))
+
+      var result = locale.translate(key).fetch()
+      // console.log('i18nfy translate', key, result)
+      // if (!result) console.warn('No translation for: ', key)
+      this.push(result || key)
+      next()
+    }
+  )
 }
