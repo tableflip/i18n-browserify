@@ -16,6 +16,7 @@ module.exports = function (file, opts) {
   var baseDir = process.cwd()
   var dictPath = path.join(opts.path || baseDir, opts.lang, 'dict.json')
   var dict = JSON.parse(fs.readFileSync(dictPath))
+  var locale = i18n(dict);
   var key = path.relative(baseDir, file)
   var tr = trumpet()
 
@@ -27,8 +28,24 @@ module.exports = function (file, opts) {
 
     // Replace the contents with the translation
     elem.createReadStream()
-      .pipe(translator(dict))
+      .pipe(translator(locale))
       .pipe(elem.createWriteStream())
+  })
+
+  tr.selectAll('[data-i18n-attr]', function (elem) {
+
+    // Get the list of attributes we should translate
+    elem.getAttribute('data-i18n-attr', function (attrs) {
+
+      // Translate each attribute
+      attrs.split(' ').forEach(function (attr) {
+        elem.getAttribute(attr, function (key) {
+          elem.setAttribute(attr, locale.translate(key).fetch() || key)
+        })
+      })
+
+      elem.removeAttribute('data-i18n-attr')
+    })
   })
 
   return tr
@@ -40,8 +57,7 @@ function isHandlebars (file) {
 }
 
 // a transform stream to replace text with translated text
-function translator (dict) {
-  var locale = i18n(dict);
+function translator (locale) {
   return through(function (buf, enc, next) {
     var key = trim(buf.toString('utf8'))
     var result = locale.translate(key).fetch()

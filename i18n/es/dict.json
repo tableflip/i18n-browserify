@@ -17,6 +17,7 @@
     "There is 1 new alert": ["Hay 1 nueva alerta", "Hay %s nuevas alertas"],
     "There is %d new warning": ["Hay 1 nuevo aviso", "Hay %d nuevos avisos"],
     "There will be 1h of scheduled maintenance on %s": ["Habrá 1h de mantenimiento programado el %s"],
-    "Please enter your email and password to log in": ["Por favor, introduzca su correo electrónico y contraseña para entrar"]
+    "Please enter your email and password to log in": ["Por favor, introduzca su correo electrónico y contraseña para entrar"],
+    "Your email address": ["Su dirección de correo electrónico"]
   }
 }
